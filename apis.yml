@@ -1,22 +1,90 @@
 aid: learnsprout
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/learnsprout.png
 name: LearnSprout
-description: LearnSprout is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: LearnSprout was a San Francisco edtech company founded in 2012 by Franklyn Chien, Anthony
+  Wu and Joe Woo out of the Imagine K12 accelerator. It built LearnSprout Connect, an API layer that
+  unlocked K-12 student data held in student information systems (SIS) through direct database
+  integration rather than the SIS application layer, giving edtech developers a single "once and done"
+  integration plus a change-log endpoint for incremental syncs. It also sold a district-facing analytics
+  product covering attendance, grades and college readiness, reaching over 2,500 schools across 42
+  states on roughly $4.7M raised from Andreessen Horowitz, Formation 8 and Samsung Ventures. Apple
+  acquired the company in January 2016 and the public API was retired; learnsprout.com no longer
+  resolves and is parked on Apple nameservers.
 url: https://raw.githubusercontent.com/api-evangelist/learnsprout/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
+- Formation 8
+- Samsung Ventures
+x-status: defunct
+x-status-reason: acquired
+x-acquired-by: Apple
+x-acquired-date: '2016-01'
+x-founded: '2012'
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: defunct-no-live-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Education
+- EdTech
+- K-12
+- Student Information Systems
+- Data Integration
+- Analytics
+- Acquired
+- Defunct
 apis: []
+common: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  last-run: '2026-07-19'
+  result: no-live-surface
+  note: >-
+    Enrichment attempted 2026-07-19. No artifacts were written because the provider has no live public
+    surface. Historical developer documentation survives only in the Internet Archive
+    (http://web.archive.org/web/20131107030713/http://developers.learnsprout.com/) and was NOT used to
+    synthesize an OpenAPI, MCP server, skills or conventions artifact, since doing so would describe an
+    API that has not existed since 2016. Future re-runs should short-circuit on x-status: defunct.
+  probes:
+  - target: https://learnsprout.com/
+    status: 0
+    detail: DNS does not resolve; no A record. NS delegated to a/b/c/d.ns.apple.com (Com Laude registrar).
+  - target: https://www.learnsprout.com/
+    status: 0
+    detail: DNS does not resolve.
+  - target: https://api.learnsprout.com/
+    status: 0
+    detail: DNS does not resolve.
+  - target: https://developers.learnsprout.com/
+    status: 0
+    detail: DNS does not resolve.
+  - target: https://github.com/learnsprout
+    status: 200
+    detail: >-
+      Org shell only, created 2026-03-12 with 0 public repos. Not the original company; treated as a
+      name squat and deliberately NOT linked as GitHubOrganization.
+  - target: https://registry.npmjs.org/-/v1/search?text=learnsprout
+    status: 200
+    detail: 0 packages.
+  - target: https://pypi.org/pypi/learnsprout/json
+    status: 404
+    detail: No PyPI package.
